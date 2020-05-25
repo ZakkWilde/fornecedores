@@ -40,6 +40,13 @@
         "version": "1.71.19"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+    	"path": "/api",
+    	"target": {
+    		"type": "destination",
+    		"name": "ODATA_ORG"
+    	}
     }
   ],
   "sendWelcomeFileRedirect": true

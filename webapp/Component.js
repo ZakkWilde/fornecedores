@@ -25,6 +25,12 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			
+			//OData Model Creation - Precisa criar uma destination sempre
+			var sUrl = "/api/V2/(S(1hlr1p1ssyqw5m4jkvxgv5ri))/OData/OData.svc/";
+			var oDataModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
+			this.setModel(oDataModel);//quando não passa o segundo parametro ele se torna o OData Principal "default"
+			
 		}
 	});
 });
