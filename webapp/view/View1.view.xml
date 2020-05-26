@@ -3,10 +3,15 @@
 		<pages>
 			<Page id="page" title="{i18n>title}">
 				<content>
-					<List items="{/Suppliers}"> <!--"Não tem prefixo {xpto>xxxxx} porque é o default-->
+					<List items="{/Suppliers}" itemPress="onItemPress"> <!--"Não tem prefixo {xpto>xxxxx} porque é o default-->
 						<items>
 							<!--<StandardListItem title="{ID}" description="{Name}" info="{Concurrency}" />-->
-							<ObjectListItem intro="{ID}" title="{Name}" number="{Concurrency}" numberUnit="Concurrency">
+							<ObjectListItem 
+							    intro="{ID}" 
+							    title="{Name}" 
+							    number="{Concurrency}" 
+							    numberUnit="Concurrency" 
+							    type="DetailAndActive">
 								<attributes>
 									<ObjectAttribute title="City" text="{Address/City}"/>
 									<ObjectAttribute title="Country" text="{Address/Country}"/>

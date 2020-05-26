@@ -27,9 +27,16 @@ sap.ui.define([
 			this.setModel(models.createDeviceModel(), "device");
 			
 			//OData Model Creation - Precisa criar uma destination sempre
-			var sUrl = "/api/V2/(S(1hlr1p1ssyqw5m4jkvxgv5ri))/OData/OData.svc/";
-			var oDataModel = new sap.ui.model.odata.v2.ODataModel(sUrl);
-			this.setModel(oDataModel);//quando não passa o segundo parametro ele se torna o OData Principal "default"
+			/*var sUrl = "/api/V2/(S(1hlr1p1ssyqw5m4jkvxgv5ri))/OData/OData.svc/";
+			var mParameters = {
+				serviceUrl: sUrl,
+				disableHeadRequestForToken: true,
+				useBatch: false  
+			};*/
+			/*var oDataModel = new sap.ui.model.odata.v2.ODataModel(sUrl, mParameters);*/
+			/*var oDataModel = new sap.ui.model.odata.v2.ODataModel(mParameters);*/
+			//Cria modelo OData
+			this.setModel(models.createODataModel());//quando não passa o segundo parametro ele se torna o OData Principal "default"
 			
 		}
 	});
