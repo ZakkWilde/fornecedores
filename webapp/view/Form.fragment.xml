@@ -1,0 +1,42 @@
+<core:FragmentDefinition 
+    xmlns:core='sap.ui.core' 
+    xmlns="sap.m" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:f="sap.ui.layout.form">
+	<f:SimpleForm editable="true" layout="ColumnLayout" columnsL="1" emptySpanL="2"
+		emptySpanM="2" labelSpanL="6">
+		<f:content>
+			<Label text="ID"/>
+			<Input id="id_fornecedor" value="{view>/id}"/>
+			<Label text="Name"/>
+			<Input id="name" value="{view>/name}"/>
+			
+			<Label text="Concurrency" />
+			<Slider value="{view>/concurrency}" />
+			<StepInput value="{view>/concurrency}" />
+			
+			<Label text="Street/No."/>
+			<Input value="{view>/street}"></Input>
+			<Input value="{view>/street_number}">
+				<layoutData>
+					<f:ColumnElementData cellsSmall="2" cellsLarge="1"/>
+				</layoutData>
+			</Input>
+			<Label text="ZIP Code/City"/>
+			<Input value="{view>/zip}">
+				<layoutData>
+					<f:ColumnElementData cellsSmall="3" cellsLarge="2"/>
+				</layoutData>
+			</Input>
+			<Input value="{view>/city}"/>
+			<Label text="Country"/>
+			<Select selectedKey="{view>/country}" items="{country>/}">
+				<items>
+					<core:Item  text="{country>name}" key="{country>id}"/>
+				</items>
+			</Select>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "ovly.odata.fornecedores.fornecedores",
+        "description": "Aula 09 Fornecedores ",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#fornecedores-Display",
+        "navigationComponentName": "ovly.odata.fornecedores",
+        "intentSemanticObject": "fornecedores",
+        "intentAction": "Display",
+        "html5ApplicationName": "fornecedores",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "5e61efe7-5af5-4518-9655-b1776aa65785"
+        ],
+        "contentPackages": [
+            "165dc72d-9d27-40de-bd1d-3288f9c2106f"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Aula 09",
+        "subtitle": "OData Binding Context ",
+        "searchKeywords": "Aula 09,OData Binding Context ",
+        "displayIconUrl": "sap-icon://addresses",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
