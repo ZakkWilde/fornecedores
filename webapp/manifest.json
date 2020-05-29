@@ -33,10 +33,10 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "ovly.odata.fornecedores.view.View2",
+			"viewName": "ovly.odata.fornecedores.view.View1",
 			"type": "XML",
 			"async": true,
-			"id": "View2"
+			"id": "View1"
 		},
 		"dependencies": {
 			"minUI5Version": "1.65.6",

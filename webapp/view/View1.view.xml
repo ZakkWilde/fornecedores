@@ -3,7 +3,25 @@
 		<pages>
 			<Page id="page" title="{i18n>title}">
 				<content>
-					<List items="{/Suppliers}" itemPress="onItemPress"> <!--"Não tem prefixo {xpto>xxxxx} porque é o default-->
+					<List items="{
+					         path:'/Suppliers',
+					         sorter: { 
+					           path:'ID', 
+					           descending: true 
+					         },
+					         filters: [
+					         {
+					           path: 'Name', 
+					           operator: 'Contains',
+					           value1: 'd'
+					          },
+					           {
+					           path: 'Address/Country', 
+					           operator: 'EQ',
+					           value1: 'USA'
+					           }
+					         ]
+					      }" itemPress="onItemPress"> <!--"Não tem prefixo {xpto>xxxxx} porque é o default-->
 						<items>
 							<!--<StandardListItem title="{ID}" description="{Name}" info="{Concurrency}" />-->
 							<ObjectListItem 
