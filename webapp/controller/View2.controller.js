@@ -25,7 +25,14 @@ sap.ui.define([
 			]);
 			
 			this.getView().setModel(this._oCountryModel, "country");
+			
+			//usado no Nav To 
+			this._oRouter = this.getOwnerComponent().getRouter();
 
+		},
+		
+		onBack: function (oEvt){
+			this._oRouter.navTo("inicial", {}, true); //Nome do Partner do manifest
 		},
 		
 		onSave: function (oEvt) {

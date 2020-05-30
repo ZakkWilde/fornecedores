@@ -1,0 +1,18 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ovly.odata.fornecedores.controller.Root"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<!--<App id="rootContainer">-->
+	<!--	<pages>-->
+			<!--<mvc:XMLView viewName="ovly.odata.fornecedores.view.View1" /> // é possivel mas não é uma boa pratica-->
+	<!--	</pages>-->
+	<!--</App>-->
+	
+	<SplitApp id="rootContainer">
+		<masterPages>
+			<!--<mvc:XMLView viewName="ovly.odata.fornecedores.view.View1" />-->
+		</masterPages>
+		<detailPages>
+			<!--<mvc:XMLView viewName="ovly.odata.fornecedores.view.View2" />-->
+		</detailPages>
+	</SplitApp>
+
+</mvc:View>

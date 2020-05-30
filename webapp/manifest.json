@@ -33,10 +33,10 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "ovly.odata.fornecedores.view.View1",
+			"viewName": "ovly.odata.fornecedores.view.Root",
 			"type": "XML",
 			"async": true,
-			"id": "View1"
+			"id": "Root"
 		},
 		"dependencies": {
 			"minUI5Version": "1.65.6",
@@ -71,30 +71,41 @@
 				"viewType": "XML",
 				"async": true,
 				"viewPath": "ovly.odata.fornecedores.view",
-				"controlAggregation": "pages",
-				"controlId": "app",
+				"controlAggregation": "masterPages",
+				"controlId": "rootContainer",
 				"clearControlAggregation": false
 			},
 			"routes": [
 				{
-					"name": "RouteView1",
-					"pattern": "RouteView1",
+					"name": "inicial",
+					"pattern": "",
 					"target": [
-						"TargetView1"
+						"Empty", "View1" 
+					]
+				},
+				{
+					"name": "add",
+					"pattern": "adicionarFornecedor",
+					"target": [
+						"View2"
 					]
 				}
 			],
 			"targets": {
-				"TargetView1": {
-					"viewType": "XML",
+				"View1": {
 					"transition": "slide",
 					"clearControlAggregation": false,
 					"viewId": "View1",
 					"viewName": "View1"
 				},
 				"View2": {
+					"viewName": "View2",
+					"controlAggregation": "detailPages"
+				},
+				"Empty": {
 					"viewType": "XML",
-					"viewName": "View2"
+					"viewName": "Empty",
+					"controlAggregation": "detailPages"
 				}
 			}
 		}

@@ -1,47 +1,30 @@
 <mvc:View controllerName="ovly.odata.fornecedores.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<App id="app">
-		<pages>
-			<Page id="page" title="{i18n>title}">
+	<Page id="page" title="{i18n>title}">
+		<content>
+			<SearchField liveChange="onSearch"/>
+			<List id="list" items="{ path:'/Suppliers', sorter: { path:'ID', descending: true } }" itemPress="onItemPress">
+				<!--"Não tem prefixo {xpto>xxxxx} porque é o default-->
+				<items>
+					<!--<StandardListItem title="{ID}" description="{Name}" info="{Concurrency}" />-->
+					<ObjectListItem intro="{ID}" title="{Name}" number="{Concurrency}" numberUnit="Concurrency" type="DetailAndActive">
+						<attributes>
+							<ObjectAttribute title="City" text="{Address/City}"/>
+							<ObjectAttribute title="Country" text="{Address/Country}"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus title="Zip Code" text="{Address/ZipCode}"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
 				<content>
-					<List items="{
-					         path:'/Suppliers',
-					         sorter: { 
-					           path:'ID', 
-					           descending: true 
-					         },
-					         filters: [
-					         {
-					           path: 'Name', 
-					           operator: 'Contains',
-					           value1: 'd'
-					          },
-					           {
-					           path: 'Address/Country', 
-					           operator: 'EQ',
-					           value1: 'USA'
-					           }
-					         ]
-					      }" itemPress="onItemPress"> <!--"Não tem prefixo {xpto>xxxxx} porque é o default-->
-						<items>
-							<!--<StandardListItem title="{ID}" description="{Name}" info="{Concurrency}" />-->
-							<ObjectListItem 
-							    intro="{ID}" 
-							    title="{Name}" 
-							    number="{Concurrency}" 
-							    numberUnit="Concurrency" 
-							    type="DetailAndActive">
-								<attributes>
-									<ObjectAttribute title="City" text="{Address/City}"/>
-									<ObjectAttribute title="Country" text="{Address/Country}"/>
-								</attributes>
-								<firstStatus>
-									<ObjectStatus title="Zip Code" text="{Address/ZipCode}" />
-								</firstStatus>
-						    </ObjectListItem>
-						</items>
-					</List>
+					<ToolbarSpacer />
+					<Button icon="sap-icon://add" press="onAdd" /> 
 				</content>
-			</Page>
-		</pages>
-	</App>
+			</Toolbar>
+		</footer>
+	</Page>
 </mvc:View>
