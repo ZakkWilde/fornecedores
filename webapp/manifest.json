@@ -10,8 +10,17 @@
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"sourceTemplate": {
-			"id": "ui5template.basicSAPUI5ApplicationProject",
-			"version": "1.40.12"
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"OData.svc": {
+				"uri": "/ODATA_ORG/V2/(S(1hlr1p1ssyfw5m4jkvxgv5ri))/OData/OData.svc/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
 		}
 	},
 	"sap.ui": {
@@ -56,6 +65,16 @@
 				"settings": {
 					"bundleName": "ovly.odata.fornecedores.i18n.i18n"
 				}
+			},
+			"odata": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "OData.svc",
+				"preload": true
 			}
 		},
 		"resources": {
@@ -80,12 +99,20 @@
 					"name": "inicial",
 					"pattern": "",
 					"target": [
-						"Empty", "View1" 
+						"Empty",
+						"View1"
 					]
 				},
 				{
 					"name": "add",
 					"pattern": "adicionarFornecedor",
+					"target": [
+						"View2"
+					]
+				},
+				{
+					"name": "display",
+					"pattern": "visualizarFornecedor/{id_do_fornecedor}",
 					"target": [
 						"View2"
 					]

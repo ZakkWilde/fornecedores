@@ -9,17 +9,17 @@
 		emptySpanM="2" labelSpanL="6">
 		<f:content>
 			<Label text="ID"/>
-			<Input id="id_fornecedor" value="{view>/id}"/>
+			<Input id="id_fornecedor" value="{view>/id}" enabled="{view>/isAdd}"/>
 			<Label text="Name"/>
-			<Input id="name" value="{view>/name}"/>
+			<Input id="name" value="{view>/name}" enabled="{view>/isAdd}"/>
 			
 			<Label text="Concurrency" />
-			<Slider value="{view>/concurrency}" />
-			<StepInput value="{view>/concurrency}" />
+			<Slider value="{view>/concurrency}" enabled="{view>/isAdd}" />
+			<StepInput value="{view>/concurrency}" enabled="{view>/isAdd}" />
 			
 			<Label text="Street/No."/>
-			<Input value="{view>/street}"></Input>
-			<Input value="{view>/street_number}">
+			<Input value="{view>/street}" enabled="{view>/isAdd}" />
+			<Input value="{view>/street_number}" enabled="{view>/isAdd}" >
 				<layoutData>
 					<f:ColumnElementData cellsSmall="2" cellsLarge="1"/>
 				</layoutData>

@@ -54,9 +54,16 @@ sap.ui.define([
 			var oList = oEvt.getSource();
 			var oParameters = oEvt.getParameters();
 			var oListItem = oParameters.listItem; //NÃO É UMA FUNÇÃO
-			var oContext = oListItem.getBindingContext();
+			// var oContext = oListItem.getBindingContext();
+			var oContext = oListItem.getBindingContext("odata");//mocado
 			var oSupplier = oContext.getObject();
-			alert(oSupplier.Name);
+			
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.navTo("display", {
+				id_do_fornecedor: oSupplier.ID
+			}, true);//
+			
+			// alert(oSupplier.Name);
 			//debugger;
 
 		},

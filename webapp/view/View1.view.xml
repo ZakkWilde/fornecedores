@@ -2,17 +2,18 @@
 	<Page id="page" title="{i18n>title}">
 		<content>
 			<SearchField liveChange="onSearch"/>
-			<List id="list" items="{ path:'/Suppliers', sorter: { path:'ID', descending: true } }" itemPress="onItemPress">
+			<!--<List id="list" items="{ path:'/Suppliers', sorter: { path:'ID', descending: true } }" itemPress="onItemPress"> "Não Mock -->
+			<List id="list" items="{ path:'/Suppliers', model:'odata', sorter: { path:'ID', descending: true } }" itemPress="onItemPress"> <!--//Mocado precisa por o prefixo por não ser a default-->
 				<!--"Não tem prefixo {xpto>xxxxx} porque é o default-->
 				<items>
 					<!--<StandardListItem title="{ID}" description="{Name}" info="{Concurrency}" />-->
-					<ObjectListItem intro="{ID}" title="{Name}" number="{Concurrency}" numberUnit="Concurrency" type="DetailAndActive">
+					<ObjectListItem intro="{odata>ID}" title="{odata>Name}" number="{odata>Concurrency}" numberUnit="Concurrency" type="DetailAndActive">
 						<attributes>
-							<ObjectAttribute title="City" text="{Address/City}"/>
-							<ObjectAttribute title="Country" text="{Address/Country}"/>
+							<ObjectAttribute title="City" text="{odata>Address/City}"/>
+							<ObjectAttribute title="Country" text="{odata>Address/Country}"/>
 						</attributes>
 						<firstStatus>
-							<ObjectStatus title="Zip Code" text="{Address/ZipCode}"/>
+							<ObjectStatus title="Zip Code" text="{odata>Address/ZipCode}"/>
 						</firstStatus>
 					</ObjectListItem>
 				</items>

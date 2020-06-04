@@ -42,11 +42,19 @@
       "description": "SAPUI5 Test Resources"
     },
     {
-    	"path": "/api",
-    	"target": {
-    		"type": "destination",
-    		"name": "ODATA_ORG"
-    	}
+      "path": "/api",
+      "target": {
+        "type": "destination",
+        "name": "ODATA_ORG"
+      }
+    },
+    {
+      "path": "/ODATA_ORG",
+      "target": {
+        "type": "destination",
+        "name": "ODATA_ORG"
+      },
+      "description": "Exemplo Aula 9 API do Site OData ORG"
     }
   ],
   "sendWelcomeFileRedirect": true

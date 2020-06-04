@@ -15,7 +15,7 @@ sap.ui.define([
 		
 		createODataModel: function () {
 			
-			var sUrl = "/api/V2/(S(1hlr1p1ssyqw5m4jkvxgv5ri))/OData/OData.svc/";
+			var sUrl = "/api/V2/(S(1hlr1p1ssyfw5m4jkvxgv5ri))/OData/OData.svc/";
 
 			var mParameters = {
 				serviceUrl: sUrl,
